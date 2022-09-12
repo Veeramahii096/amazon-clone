@@ -20,9 +20,9 @@ function Home() {
   return (
     <div className='Home'>
       <div className='home__container'>
-      <div>
+      <div className='slider'>
       <SimpleImageSlider
-        width={1425}
+        width={1325}
         height={300}
         images={images}
         showBullets={false}
@@ -39,7 +39,7 @@ function Home() {
                 price={39990} image="https://images-eu.ssl-images-amazon.com/images/I/41ezRvTwcaL._SX300_SY300_QL70_FMwebp_.jpg"
                  rating={3}/>
 
-                <Product id='2423423' title='Samsung Galaxy Buds Pro Intelligent ANC with 99% Noise Cancellation Bluetooth Truly Wireless in Ear Earbuds wiSamsung Galaxy Buds Pro Intelligent ANC with 99% Noise Cancellation Bluetooth Truly Wireless in Ear Earbuds with Mic Wireless Charging, 28 Hours Playtime (Silver)Samsung Galaxy Buds Pro Intelligent ANC wit…'
+                <Product id='2423423' title='Samsung Galaxy Buds Pro Intelligent ANC with 99% Noise Cancellation Bluetooth Truly Wireless in Ear'
                 price={1500.0} image="https://images-eu.ssl-images-amazon.com/images/I/41zYFz1vfxL._AC_SX184_.jpg"
                  rating={5} />
                 
@@ -48,10 +48,10 @@ function Home() {
                 <Product  id='343545'title='Fire-Boltt Ninja 2 Max 1.5" Full Touch Display, SpO2, Heart Rate, 20 Sports Mode '
                 price={1999.0} image="https://images-eu.ssl-images-amazon.com/images/I/41EQYr-n85L._AC_SX184_.jpg"
                  rating={4}/>
-                <Product id='44355' title='Redgear Pro Series Wired Gamepad with Integrated Force Feedback, Illuminated ABXY Keys, Ergonomically Design, 1.8m USB Cable for PC'
+                <Product id='44355' title='Redgear Pro Series Wired Gamepad with Integrated Force Feedback, Illuminated ABXY Keys, '
                 price={699.0} image="https://m.media-amazon.com/images/I/51300qVfYmL._AC_UL320_.jpg"
                  rating={3}/>
-                <Product id='53432' title='Redgear Shadow Blade Mechanical Keyboard with Drive Customization, Spectrum LED Lights, Media Control Knob and Wrist Support (Black)'
+                <Product id='53432' title='Redgear Shadow Blade Mechanical Keyboard with Drive Customization, Spectrum LED Lights'
                 price={1999.0} image="https://m.media-amazon.com/images/I/61NKGdlO36L._AC_UL320_.jpg"
                  rating={4}/>
                 

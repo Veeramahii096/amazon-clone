@@ -12,6 +12,14 @@
     object-fit: contain;
     margin: 0 20px;
     margin-top: 18px;
+    
+}
+.header__logo:hover{
+
+    outline:1px solid rgba(249,249,249, 0.8);
+    
+        cursor: pointer;
+    
 }
 .header__searchIcon{
     padding: 5px;
@@ -38,6 +46,11 @@
     margin-right: 10px;
     color: white;
 }
+.header__option:hover{
+
+        outline: 1px solid rgba(249,249,249, 0.8);
+        cursor: pointer;
+}
 .header__nav{
     display: flex;
     justify-content: space-evenly;
@@ -53,6 +66,11 @@
     display: flex;
     align-items: center;
     color: white;
+}
+.header__optionBasket:hover{
+    outline:1px solid rgba(249,249,249, 0.8);
+    
+    cursor: pointer;
 }
 .header__BasketCount{
     margin-left: 10px;
