@@ -12,8 +12,8 @@ const addToBasket=()=>{
       id:id,
       title:title,
       image:image,
-      price:price,
-      rating:rating,
+      price:price, 
+      rating:rating,  
     },
   });
 
