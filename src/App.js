@@ -7,12 +7,18 @@ import {BrowserRouter as Router,
 from 'react-router-dom';
 import {useNavigate} from "react-router-dom"
 import Checkout from './Checkout';
+import Login from './Login';
 function App() {
   return (
     <Router>
       <div className="App">
         <Header/>
+        
         <Routes>
+        <Route path='/login'element={<Login />} >
+        
+        </Route>
+
         <Route path='/checkout'element={<Checkout />} >
         
         </Route>

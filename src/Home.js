@@ -36,23 +36,23 @@ function Home() {
       
         <div className='home__row'>
                 <Product id='124545' title='Samsung Galaxy S20 FE 5G (Cloud Navy, 8GB RAM, 128GB Storage) with No Cost EMI & Additional Exchange Offers'
-                price={39990} image="https://images-eu.ssl-images-amazon.com/images/I/41ezRvTwcaL._SX300_SY300_QL70_FMwebp_.jpg"
+                price={39990.60} image="https://images-eu.ssl-images-amazon.com/images/I/41ezRvTwcaL._SX300_SY300_QL70_FMwebp_.jpg"
                  rating={3}/>
 
                 <Product id='2423423' title='Samsung Galaxy Buds Pro Intelligent ANC with 99% Noise Cancellation Bluetooth Truly Wireless in Ear'
-                price={1500.0} image="https://images-eu.ssl-images-amazon.com/images/I/41zYFz1vfxL._AC_SX184_.jpg"
+                price={1500.80} image="https://images-eu.ssl-images-amazon.com/images/I/41zYFz1vfxL._AC_SX184_.jpg"
                  rating={5} />
                 
             </div>
             <div className='home__row'>
                 <Product  id='343545'title='Fire-Boltt Ninja 2 Max 1.5" Full Touch Display, SpO2, Heart Rate, 20 Sports Mode '
-                price={1999.0} image="https://images-eu.ssl-images-amazon.com/images/I/41EQYr-n85L._AC_SX184_.jpg"
+                price={1999.60} image="https://images-eu.ssl-images-amazon.com/images/I/41EQYr-n85L._AC_SX184_.jpg"
                  rating={4}/>
                 <Product id='44355' title='Redgear Pro Series Wired Gamepad with Integrated Force Feedback, Illuminated ABXY Keys, '
-                price={699.0} image="https://m.media-amazon.com/images/I/51300qVfYmL._AC_UL320_.jpg"
+                price={699.20} image="https://m.media-amazon.com/images/I/51300qVfYmL._AC_UL320_.jpg"
                  rating={3}/>
                 <Product id='53432' title='Redgear Shadow Blade Mechanical Keyboard with Drive Customization, Spectrum LED Lights'
-                price={1999.0} image="https://m.media-amazon.com/images/I/61NKGdlO36L._AC_UL320_.jpg"
+                price={1999.30} image="https://m.media-amazon.com/images/I/61NKGdlO36L._AC_UL320_.jpg"
                  rating={4}/>
                 
             </div>
