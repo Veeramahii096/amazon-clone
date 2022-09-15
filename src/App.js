@@ -14,15 +14,16 @@ import Payment from './Payment';
 import {loadStripe} from '@stripe/stripe-js';
 import {Elements} from '@stripe/react-stripe-js';
 import { useState } from 'react';
+import Orders from './Orders';
 
 
 function App() {
- const promise=loadStripe('pk_test_51Li441SEqeYd8iuHfx9V4A5rTHY9Y0lkpUlqTLSuehMbvnFd2BwW8MsDqSnWqwnybuMUtdkVvV2mLnjAtJT16JLm000BGY67Qm')
+ const promise=loadStripe('pk_test_51Li441SEqeYd8iuHfx9V4A5rTHY9Y0lkpUlqTLSuehMbvnFd2BwW8MsDqSnWqwnybuMUtdkVvV2mLnjAtJT16JLm000BGY67Qm');
  
  const [{},dispatch]=useStateValue();
   useEffect(() => {
     auth.onAuthStateChanged(authUser=>{
-      console.log(authUser);
+      
       if(authUser){
         dispatch({
           type:'SET_USER',
@@ -45,7 +46,7 @@ function App() {
         
       <Header/>
         <Routes>
-        
+        <Route path='/orders' element={<Orders />} ></Route>
         <Route path='/login' element={<Login />} >
         
         </Route>

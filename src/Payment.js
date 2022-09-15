@@ -7,9 +7,7 @@ import { useElements, useStripe,CardElement } from '@stripe/react-stripe-js';
 import { useState } from 'react';
 import CurrencyFormat from 'react-currency-format';
 import { getBaskterTotal } from './reducer';
-import axios from 'axios';
-
-
+import axios from './axios';
 function Payment() {
     const navigate=useNavigate();
     const [{basket,user},dispatch]=useStateValue();
@@ -24,12 +22,15 @@ function Payment() {
         const getClientSecret=async()=>{
             const response=await axios({
                 method:'post',
-                url:`/payments/create?total ${getBaskterTotal(basket)*100}`
+                url:`/payments/create?total=${getBaskterTotal(basket)*100}`,
             });
             setClientSecret(response.data.clientSecret)
         }
-        getClientSecret();
-    },[basket])
+
+    getClientSecret();
+    }, [basket]);
+
+    console.log('The client secret is>>>',clientSecret)
     const handledSubmit=async(event)=>{
         event.preventDefault();
         setProcessing(true);
@@ -37,9 +38,12 @@ function Payment() {
         card:elements.getElement(CardElement)
        }}).then(({paymentIntent})=>{
         setSucceeded(true);
-        setError(null)
-        setProcessing(false)
-        Navigate('./orders')
+        setError(null);
+        setProcessing(false);
+        
+        dispatch({
+            type:'EMPTY_BASKET'})
+        navigate("/orders", { replace: true });
        }) 
 
     }
@@ -99,6 +103,7 @@ function Payment() {
                     </div>
                     {error && <div>{error}</div>}
                 </form>
+
             </div>
         </div>
       </div>
