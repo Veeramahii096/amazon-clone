@@ -11,6 +11,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   
     <Stateprovider initialState={initialState} reducer={reducer}>
+        
     <App />
     </Stateprovider>
    

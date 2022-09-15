@@ -5,9 +5,9 @@
 .checkout{
     display: flex;
     padding: 20px;
-    background-color: white;
+   
     height: max-content;
-    background-color: #EAEDED!important;;
+    background-color: #EAEDED ;
 
     
 }
