@@ -49,7 +49,7 @@ function Home() {
                 price={1999.60} image="https://images-eu.ssl-images-amazon.com/images/I/41EQYr-n85L._AC_SX184_.jpg"
                  rating={4}/>
                 <Product id='44355' title='Redgear Pro Series Wired Gamepad with Integrated Force Feedback, Illuminated ABXY Keys, '
-                price={699.20} image="https://m.media-amazon.com/images/I/51300qVfYmL._AC_UL320_.jpg"
+                price={60.20} image="https://m.media-amazon.com/images/I/51300qVfYmL._AC_UL320_.jpg"
                  rating={3}/>
                 <Product id='53432' title='Redgear Shadow Blade Mechanical Keyboard with Drive Customization, Spectrum LED Lights'
                 price={1999.30} image="https://m.media-amazon.com/images/I/61NKGdlO36L._AC_UL320_.jpg"

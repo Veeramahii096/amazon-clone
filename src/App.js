@@ -15,11 +15,11 @@ import {loadStripe} from '@stripe/stripe-js';
 import {Elements} from '@stripe/react-stripe-js';
 import { useState } from 'react';
 import Orders from './Orders';
-
+import axios from './axios';
 
 function App() {
  const promise=loadStripe('pk_test_51Li441SEqeYd8iuHfx9V4A5rTHY9Y0lkpUlqTLSuehMbvnFd2BwW8MsDqSnWqwnybuMUtdkVvV2mLnjAtJT16JLm000BGY67Qm');
- 
+ //const promise=loadStripe('sk_test_51Li441SEqeYd8iuHkVZ9MVqh1Cs4zqKqVmGmhnzBmcgyTb8Lq3uDK0rRCis7E0dYzbb6cF3BrAE6MbTEfIhlIMLE00eAwzxxf7');
  const [{},dispatch]=useStateValue();
   useEffect(() => {
     auth.onAuthStateChanged(authUser=>{
@@ -53,16 +53,23 @@ function App() {
         
        <Route path='/checkout' element={<Checkout />} >
         </Route>
-        {(
-      <Route
+     {/*   {(
+    {  <Route
       path="/payment"
     element={(
       <Elements stripe={promise}>
         <Payment />
       </Elements>
     )}
-  />
-)}
+  />}
+    )}*/}
+ <Route
+      path="/payment"element={(<Elements stripe={promise}>
+   
+      <Payment/>
+    </Elements>
+    )}
+/>
         <Route path='/'  element={<Home/>}>
         
         </Route>

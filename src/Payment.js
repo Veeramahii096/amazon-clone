@@ -8,6 +8,8 @@ import { useState } from 'react';
 import CurrencyFormat from 'react-currency-format';
 import { getBaskterTotal } from './reducer';
 import axios from './axios';
+import {db} from './firebase'
+import Orders from './Orders';
 function Payment() {
     const navigate=useNavigate();
     const [{basket,user},dispatch]=useStateValue();
@@ -19,7 +21,8 @@ function Payment() {
     const[processing,setProcessing]=useState("")
     const[clientSecret,setClientSecret]=useState(true);
     useEffect(()=>{
-        const getClientSecret=async()=>{
+        
+        const getClientSecret =async()=>{
             const response=await axios({
                 method:'post',
                 url:`/payments/create?total=${getBaskterTotal(basket)*100}`,
@@ -27,19 +30,32 @@ function Payment() {
             setClientSecret(response.data.clientSecret)
         }
 
-    getClientSecret();
+        getClientSecret();
     }, [basket]);
 
     console.log('The client secret is>>>',clientSecret)
+    console.log('',user);
     const handledSubmit=async(event)=>{
         event.preventDefault();
         setProcessing(true);
-       const payload=await stripe.confirmCardPayment(clientSecret,{payment_method:{
+       const payload=await stripe.confirmCardPayment(clientSecret,{
+        payment_method:{   
         card:elements.getElement(CardElement)
-       }}).then(({paymentIntent})=>{
+       }
+    }).then(({paymentIntent})=>{
+
+        db.collection('users').doc(user?.id).collection('orders').
+        doc(paymentIntent.id)
+        .set({
+            basket:basket,
+            amount:paymentIntent.amount,
+            created:paymentIntent.created
+        })
         setSucceeded(true);
         setError(null);
         setProcessing(false);
+
+       
         
         dispatch({
             type:'EMPTY_BASKET'})
@@ -47,6 +63,7 @@ function Payment() {
        }) 
 
     }
+    
     const handleChange=event=>{
         setDisabled(event.empty);
         setError(event.error ? event.error.message:'');
